@@ -1,10 +1,5 @@
 import './App.css';
 import styled from 'styled-components';
-import slideImg1 from './essets/img1.png';
-import slideImg2 from './essets/img2.jpeg';
-import slideImg3 from './essets/img3.png';
-import slideImg4 from './essets/img4.jpeg';
-import slideImg5 from './essets/img5.jpeg';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Mousewheel, Keyboard, Autoplay } from 'swiper/modules';
@@ -12,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
+import { slideImages } from './contents/slideImages';
 
 function App() {
   return (
@@ -40,11 +36,9 @@ function App() {
           loop={true} // 무한 반복 설정
           modules={[Navigation, Pagination, Mousewheel, Keyboard, Autoplay]}
         >
-          <SwiperSlide><SlideImage src={slideImg1} alt="Slide 1" /></SwiperSlide>
-          <SwiperSlide><SlideImage src={slideImg2} alt="Slide 2" /></SwiperSlide>
-          <SwiperSlide><SlideImage src={slideImg3} alt="Slide 3" /></SwiperSlide>
-          <SwiperSlide><SlideImage src={slideImg4} alt="Slide 4" /></SwiperSlide>
-          <SwiperSlide><SlideImage src={slideImg5} alt="Slide 5" /></SwiperSlide>
+          <SwiperSlide>{slideImages.map((data)=>(
+            <SlideImage key={data.id} src={data.image} alt="Slide" />
+          ))}</SwiperSlide>
         </StyledSwiper>
       </SwiperWrapper>
       <YoutubeContainer>
@@ -239,7 +233,7 @@ const YoutubeContainer = styled.div`
 
 const WebContainer = styled.div`
   width: 100%;
-  height: 180px;
+  height: 150px;
   background-color: #683a30;
   position: static;
   margin: 0;
@@ -247,6 +241,7 @@ const WebContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 10px 10px 10px 105px;
+  gap: 200px;
 `;
 
 const WebCont = styled.div`
@@ -255,6 +250,7 @@ const WebCont = styled.div`
   font-size: 1.25rem;
   color: #fff;
   display: flex;
+  gap: 10px;
 `;
 
 const WebStatus = styled.strong`
