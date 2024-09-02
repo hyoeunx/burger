@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: 'FlameRegular', sans-serif; /* 폰트 적용 */
 }
 
 .App-link {
@@ -35,4 +36,16 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@font-face {
+  font-family: 'FlameSans'; /* 사용할 폰트의 이름을 정의 */
+  src: url('./fonts/Flame\ Sans.ttf'); /* 폰트 파일의 위치 */
+}
+
+@font-face {
+  font-family: 'SBAggroB';
+  src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
